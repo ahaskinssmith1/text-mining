@@ -1,17 +1,17 @@
 
 
-**# Project Overview**
+# Project Overview
 
 For this project I wanted to analyze texts from Project Gutenberg, specifically books written by Sigmund Freud. Having read criticism of Freud's books, but having never read the books myself, I wanted to analyze a number of Freud's books using sentiment analysis techniques in Python. I mainly used the Natural Language Toolkit library to do the analysis of the text. First, I used the stopword's corpus to remove words that added little information to the text. As well, I used the tokenize tool within the remove_stopwords function to break each word in the book into an individual string. As well, I used the polarity tool to give an idea of the overall sentiment of the text. From this, I hoped to 1. Understand the top terms in the text 2. The overall tone of the text with all terms considered. 
 
-**# Implementation**
+# Implementation
 
 Starting at the top of my system, there is a helper function which imports a text from the project Gutenberg library given a globally declared variable set to the books url. This function returns the entire book as one string. From there, the book needs to be processed for frurther analysis using tools from the NLTK library. First is to tokenize the entire book, so each word is a string and can be muted based on logic. Next, the tokenized text needs to be looped through and compared to a corpus of stopwords, if any of the tokens match any of the stopwords, they are removed from the tuple. 
 
 For the analysis portion of this system, there are two main components. First is creating a dictionary with with keys equal to a word and value equal to the word's frequency in the text. For this frequency dictionary, I wanted the dictionary to be sorted based on the value, for this I need to pass the word dictionary onto a new function to reorder the dictionary's elements. For this reordering, I decided to use the sorted method for dictionaries instead of nested loops to sort the dictionary. I just felt as if this was the easier route so thats why I took it. Second is sentiment analysis using the NLTK library which outputs a polarity score dictionary for the text. 
 
 
-**# Results**
+# Results
 
 
 The criticism I've read on Freud's texts center on his gravitation towards sexuality as an explanation for everything (https://literariness.org/2016/04/16/freudian-psychoanalysis/). With this program, I wanted to break down the contents of two Freudian texts 1. For their top terms to examine for sexual themes and 2. For their overall tone or sentiment. 
@@ -44,7 +44,7 @@ Words that appeared in the book 50 or more times
 
 
 
-**# Reflection**
+# Reflection
 
 For the coding of this program, the hardest part was properly using the NLTK tools. This required lots of google searches on what packages to download and how to do so. It was not as simple as importing a package. One major thing I realize I need to add to my code is the removal of the Project Gutenberg headers as well as numbers. I feel like this is the main downfall of my code as the word frequencies are overtaken by somewhat meaningless words even after stopword removal. As well, I think my analysis for these texts was a little light, if I had more time I would like to run the the two books side by side and compare their similarities in a vectorspace. 
 
